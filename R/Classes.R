@@ -13,7 +13,13 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
+
+
+assertLargeInt <- function(val, ...) {
+  checkmate::assertNumeric(val, ...)
+  checkmate::assertTRUE(all(val %% 1 == 0))
+}
+
 #' 
 #' R6 Class Representing a IncidenceDesign
 #' 
@@ -335,7 +341,7 @@ CohortReference <- R6::R6Class("CohortReference",
        private$.id
      } else {
        # check type
-       checkmate::assertInt(id)
+       checkmate::assertLargeInt(id)
        private$.id <- id
        self
      }
@@ -421,7 +427,7 @@ Outcome <- R6::R6Class("Outcome",
         private$.id
       } else {
         # check type
-        checkmate::assertInt(id)
+        checkmate::assertLargeInt(id)
         private$.id <- id
         self
       }
@@ -443,7 +449,7 @@ Outcome <- R6::R6Class("Outcome",
         private$.cohortId
       } else {
         # check type
-        checkmate::assertInt(cohortId)
+        checkmate::assertLargeInt(cohortId)
         private$.cohortId <-cohortId
         self
       }
@@ -454,7 +460,7 @@ Outcome <- R6::R6Class("Outcome",
         private$.cleanWindow
       } else {
         # check type
-        checkmate::assertInt(cleanWindow)
+        checkmate::assertLargeInt(cleanWindow)
         private$.cleanWindow <- cleanWindow
         self
       }
@@ -465,7 +471,7 @@ Outcome <- R6::R6Class("Outcome",
         private$.excludeCohortId
       } else {
         # check type
-        checkmate::assertInt(excludeCohortId)
+        checkmate::assertLargeInt(excludeCohortId)
         private$.excludeCohortId <- excludeCohortId
         self
       }
@@ -533,7 +539,7 @@ TimeAtRisk <- R6::R6Class("TimeAtRisk",
        private$.id
      } else {
        # check type
-       checkmate::assertInt(id)
+       checkmate::assertLargeInt(id)
        private$.id <- id
        self
      }
@@ -662,7 +668,7 @@ CohortSubgroup <- R6::R6Class("CohortSubgroup",
         private$.id
       } else {
         # check type
-        checkmate::assertInt(id)
+        checkmate::assertLargeInt(id)
         private$.id <- id
         self
       }
