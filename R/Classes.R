@@ -341,7 +341,7 @@ CohortReference <- R6::R6Class("CohortReference",
        private$.id
      } else {
        # check type
-       checkmate::assertLargeInt(id)
+       assertLargeInt(id)
        private$.id <- id
        self
      }
@@ -427,7 +427,7 @@ Outcome <- R6::R6Class("Outcome",
         private$.id
       } else {
         # check type
-        checkmate::assertLargeInt(id)
+        assertLargeInt(id)
         private$.id <- id
         self
       }
@@ -449,7 +449,7 @@ Outcome <- R6::R6Class("Outcome",
         private$.cohortId
       } else {
         # check type
-        checkmate::assertLargeInt(cohortId)
+        assertLargeInt(cohortId)
         private$.cohortId <-cohortId
         self
       }
@@ -460,7 +460,7 @@ Outcome <- R6::R6Class("Outcome",
         private$.cleanWindow
       } else {
         # check type
-        checkmate::assertLargeInt(cleanWindow)
+        assertLargeInt(cleanWindow)
         private$.cleanWindow <- cleanWindow
         self
       }
@@ -471,7 +471,7 @@ Outcome <- R6::R6Class("Outcome",
         private$.excludeCohortId
       } else {
         # check type
-        checkmate::assertLargeInt(excludeCohortId)
+        assertLargeInt(excludeCohortId)
         private$.excludeCohortId <- excludeCohortId
         self
       }
@@ -539,7 +539,7 @@ TimeAtRisk <- R6::R6Class("TimeAtRisk",
        private$.id
      } else {
        # check type
-       checkmate::assertLargeInt(id)
+       assertLargeInt(id)
        private$.id <- id
        self
      }
@@ -668,7 +668,7 @@ CohortSubgroup <- R6::R6Class("CohortSubgroup",
         private$.id
       } else {
         # check type
-        checkmate::assertLargeInt(id)
+        assertLargeInt(id)
         private$.id <- id
         self
       }
